@@ -118,7 +118,8 @@ void extract_file(FILE* path, char* filename)
 
     if (!strcmp(file_name, filename))
     {
-      printf("%s\n", file_cont);
+      FILE* fw = fopen(file_name, "wb");
+      fwrite(file_cont, 1, len_file_cont, fw);
       return;
     }
 
